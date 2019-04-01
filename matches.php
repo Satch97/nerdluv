@@ -5,7 +5,11 @@
 	<div>
     <fieldset>
       <legend>Returning User:</legend>
-      Name: <input type="text" name="name" maxlength="16" /> <br/>
+			<ul>
+				<li>
+					<strong>Name:</strong><input type="text" name="name" maxlength="16" />
+				</li>
+			</ul>
       <input type="submit" value="View My Matches" />
     </fieldset>
   </div>
