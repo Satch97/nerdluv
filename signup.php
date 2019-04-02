@@ -23,7 +23,8 @@
 					</select>
 				</li>
 				<li>
-					<strong>Seeking age:</strong><input type="text" name="min" size="6" maxlength="2" placeholder="min"/>
+					<strong>Seeking age:</strong>
+												<input type="text" name="min" size="6" maxlength="2" placeholder="min"/>
 												<input type="text" name="max" size="6" maxlength="2" placeholder="max"/>
 				</li>
 			</ul>
