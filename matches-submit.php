@@ -11,7 +11,11 @@
     <h2>Error, empty name field</h2>
 
 <?php
-  }
+} else {
+?>
+         <h2>Matches for <?= $name?></h2>
+<?php
+}
 
   try {
     $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
@@ -27,10 +31,9 @@
                WHERE i.name = $name;");
     if (count($users) < 1) {
 ?>
-       <h2>Error, your uder information is not found, try signing up</h2>
+       <h2>Error, your user information is not found, try signing up</h2>
 <?php
     } else {
-
        $curruser = $users->fetch(PDO::FETCH_ASSOC); // assume only one, not handling duplicates
        $os_id = $curruser['os_id'];
        $min = $curruser['min'];
