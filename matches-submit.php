@@ -21,7 +21,7 @@
   try {
     $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-  
+
     // search for user
     $users = $db->query("SELECT i.name, i.gender, i.age, p.u_pers, o.os_id, a.min, a.max
                FROM userinfo i
@@ -53,6 +53,14 @@
                                 AND i.age <= $max;");
 
         foreach($rows as $row) {
+        $flag = FALSE;
+        $currpers = str_split($row["u_pers"]);
+        $rowpers = $arr1 = str_split($curruser["u_pers"]);
+        for ($i = 0; $i < sizeof($rowpers); $i++){
+          if($currpers[$i] == $rowpers[$i]) {
+            $flag = TRUE;
+          }
+        }
 ?>
             <div class='match'>
              <p><img src='user.jpg' ><?= $row["name"]?></p>
