@@ -12,7 +12,6 @@
 
   $err = FALSE;
 
-
   if (!preg_match("/\S/", $name)) { // non-empty
     $err = TRUE;
 ?>
@@ -46,10 +45,10 @@
 <?php
   }
 
-  if (!preg_match("/^[0-2]$/", $os)) {
+  if (!preg_match("/^[1-3]$/", $os)) {
     $err = TRUE;
 ?>
-  <h2>Error, invalid Personality Type Submitted.</h2>
+  <h2>Suspicious submission</h2>
 <?php
   }
 
@@ -75,6 +74,26 @@
   }
 
   if(!$err) {
+    try {
+      $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
+      $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      $name = $db->quote($name);
+      $gen = $db->quote($gen);
+      $pers = $db->quote($pers);
+
+      $db->exec("INSERT INTO userinfo VALUES(NULL, $name, $gen, $age);");
+      $db->exec("INSERT INTO userpersonality VALUES(LAST_INSERT_ID(),$pers);");
+      $db->exec("INSERT INTO useros VALUES(LAST_INSERT_ID(),$os);");
+      $db->exec("INSERT INTO useragerange VALUES(LAST_INSERT_ID() , $min, $max);");
+
+    } catch (PDOException $ex) {
+
+    ?>
+      <p>Sorry, a database error occurred. Please try again later.</p> <p>(Error details: <?= $ex->getMessage() ?>)</p>
+      <?php
+    }
+
 ?>
   <div><strong>Thank You!</strong></div><br>
   <div>Welcome to Nerdluv, <?= $name ?></div><br>
