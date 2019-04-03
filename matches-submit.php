@@ -21,13 +21,7 @@
   try {
     $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $rows = $db->query("SELECT i.name, i.gender, p.u_pers, i.age, oo.os_name, a.min, a.max
-                FROM userinfo i
-                JOIN userpersonality p ON i.u_id = p.u_id
-                JOIN useros o ON i.u_id = o.u_id
-                JOIN os oo ON oo.os_id = o.os_id
-                JOIN useragerange a ON i.u_id = a.u_id;");
-
+  
     // search for user
     $users = $db->query("SELECT i.name, i.gender, i.age, p.u_pers, o.os_id, a.min, a.max
                FROM userinfo i
