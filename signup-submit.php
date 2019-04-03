@@ -16,9 +16,7 @@
   if (!preg_match("/\S/", $name)) { // non-empty
     $err = TRUE;
 ?>
-    <h2>Error, empty name field,
-      <a href = "http://www.humanmetrics.com/cgi-win/JTypes2.asp">Guide</a>
-    </h2>
+    <h2>Error, empty name field.</h2>
 
 <?php
   }
@@ -41,7 +39,10 @@
   if (!preg_match("/^[IiEe][NnSs][FfTf][JjPp]$/", $pers)) {
     $err = TRUE;
 ?>
-  <h2>Error, invalid Personality Type Submitted.</h2>
+  <h2>Error, invalid Personality Type Submitted.
+    <a href = "http://www.humanmetrics.com/cgi-win/JTypes2.asp">Guide</a>
+  </h2>
+
 <?php
   }
 
