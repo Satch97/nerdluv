@@ -41,6 +41,23 @@
 <?php
     } else {
 
+       $curruser = $users->fetch(PDO::FETCH_ASSOC); // assume only one, not handling duplicates
+       $os_id = $curruser['os_id'];
+       $min = $curruser['min'];
+       $max = $curruser['max'];
+       $gen = $curruser['gender'];
+       $gen = $db->quote($gen);
+       $rows = $db->query("SELECT i.name, i.gender, p.u_pers, i.age, oo.os_name, a.min, a.max
+                                FROM userinfo i
+                                JOIN userpersonality p ON i.u_id = p.u_id
+                                JOIN useros o ON i.u_id = o.u_id
+                                JOIN os oo ON oo.os_id = o.os_id
+                                JOIN useragerange a ON i.u_id = a.u_id
+                                WHERE o.os_id = $os_id
+                                AND i.gender <> $gen
+                                AND i.age >= $min
+                                AND i.age <= $max;");
+
         foreach($rows as $row) {
 ?>
             <div class='match'>
