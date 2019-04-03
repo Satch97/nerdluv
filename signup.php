@@ -9,17 +9,17 @@
 				<li>
 					<strong>Name:</strong> <input type="text" name="name" maxlength="16" />
 				</li>
-				<li><strong>Gender:</strong><input type="radio" name="gen" value="male" /> Male
-								<input type="radio" name="gen" value="male" checked="checked" /> Female</li>
+				<li><strong>Gender:</strong><input type="radio" name="gen" value="M" /> Male
+								<input type="radio" name="gen" value="F" checked="checked" /> Female</li>
 				<li><strong>Age:</strong><input type="text" name="age" maxlength="6" /> </li>
 				<li>
-					<strong>Personality Type:</strong><input type="text" size="6" maxlength="4" />
+					<strong>Personality Type:</strong><input type="text" name="perstype" size="6" maxlength="4" />
 					<a href = "http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type?)</a>
 				</li>
-				<li><strong>Favorite OS:</strong><select name="favoriteos">
-						<option selected="selected">Windows</option>
-						<option>Mac OS X</option>
-						<option >Linux</option>
+				<li><strong>Favorite OS:</strong><select name="os">
+						<option value = "1" selected="selected">Windows</option>
+						<option value="2" >Mac OS X</option>
+						<option value ="3" >Linux</option>
 					</select>
 				</li>
 				<li>
