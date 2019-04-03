@@ -1,11 +1,9 @@
 <?php include("top.html"); ?>
 
-
 <?php
   $name = $_GET["name"];
 
   $err = FALSE;
-
 
   if (!preg_match("/\S/", $name)) { // non-empty
     $err = TRUE;
@@ -14,9 +12,6 @@
 
 <?php
   }
-
-
-
 
   try {
     $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
@@ -78,17 +73,12 @@
           }
 
       }
-
     }
-
-
   } catch (PDOException $ex) {
 ?>
     <p>Sorry, a database error occurred. Please try again later.</p> <p>(Error details: <?= $ex->getMessage() ?>)</p>
     <?php
 }
-
-
 
 ?>
 <?php include("bottom.html"); ?>
