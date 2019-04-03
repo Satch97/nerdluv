@@ -61,17 +61,21 @@
             $flag = TRUE;
           }
         }
+
+        if($flag) {
 ?>
-            <div class='match'>
-             <p><img src='user.jpg' ><?= $row["name"]?></p>
-             <ul>
-                 <li><strong>gender:</strong><?= $row["gender"]?></li>
-                 <li><strong>age:</strong><?= $row["age"]?></li>
-                 <li><strong>type:</strong><?= $row["u_pers"]?></li>
-                 <li><strong>OS:</strong><?= $row["os_name"]?></li>
-             </ul>
-            </div>
+           <div class='match'>
+            <p><img src='user.jpg' ><?= $row["name"]?></p>
+            <ul>
+                <li><strong>gender:</strong><?= $row["gender"]?></li>
+                <li><strong>age:</strong><?= $row["age"]?></li>
+                <li><strong>type:</strong><?= $row["u_pers"]?></li>
+                <li><strong>OS:</strong><?= $row["os_name"]?></li>
+            </ul>
+           </div>
 <?php
+          }
+
       }
 
     }
