@@ -59,6 +59,20 @@
 <?php
   }
 
+  if (!preg_match("/^\d{1,2}$/", $max)) {
+    $err = TRUE;
+?>
+  <h2>Error, invalid max field</h2>
+<?php
+  }
+
+  if ($max < $min) {
+    $err = TRUE;
+?>
+  <h2>Error, max age cannot be less than min age</h2>
+<?php
+  }
+
 
 ?>
 
