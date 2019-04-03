@@ -28,19 +28,19 @@
                 JOIN os oo ON oo.os_id = o.os_id
                 JOIN useragerange a ON i.u_id = a.u_id;");
 
-foreach($rows as $row) {
-  ?>
-    <div class='match'>
-     <p><img src='user.jpg' ><?= $row["name"]?></p>
-     <ul>
-         <li><strong>gender:</strong><?= $row["gender"]?></li>
-         <li><strong>age:</strong><?= $row["age"]?></li>
-         <li><strong>type:</strong><?= $row["u_pers"]?></li>
-         <li><strong>OS:</strong><?= $row["os_name"]?></li>
-     </ul>
-    </div>
-
-  <?php
+    foreach($rows as $row) {
+?>
+        <div class='match'>
+         <p><img src='user.jpg' ><?= $row["name"]?></p>
+         <ul>
+             <li><strong>gender:</strong><?= $row["gender"]?></li>
+             <li><strong>age:</strong><?= $row["age"]?></li>
+             <li><strong>type:</strong><?= $row["u_pers"]?></li>
+             <li><strong>OS:</strong><?= $row["os_name"]?></li>
+         </ul>
+        </div>
+<?php
+    }
   } catch (PDOException $ex) {
 ?>
     <p>Sorry, a database error occurred. Please try again later.</p> <p>(Error details: <?= $ex->getMessage() ?>)</p>
