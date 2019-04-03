@@ -28,6 +28,21 @@
                 JOIN os oo ON oo.os_id = o.os_id
                 JOIN useragerange a ON i.u_id = a.u_id;");
 
+    // search for user
+    $users = $db->query("SELECT i.name, i.gender, i.age, p.u_pers, o.os_id, a.min, a.max
+               FROM userinfo i
+               JOIN userpersonality p ON i.u_id = p.u_id
+               JOIN useros o ON i.u_id = o.u_id
+               JOIN useragerange a ON i.u_id = a.u_id
+               WHERE i.name = $name;");
+    if (count($users) < 1) {
+ ?>
+       <h2>Error, your uder information is not found, try signing up</h2>
+ <?php
+    } else {
+
+    }
+
     foreach($rows as $row) {
 ?>
         <div class='match'>
