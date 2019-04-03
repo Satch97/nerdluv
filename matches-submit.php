@@ -23,6 +23,7 @@
     $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // search for user
+    $name = $db->quote($name);
     $users = $db->query("SELECT i.name, i.gender, i.age, p.u_pers, o.os_id, a.min, a.max
                FROM userinfo i
                JOIN userpersonality p ON i.u_id = p.u_id
