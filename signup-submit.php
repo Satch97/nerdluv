@@ -73,6 +73,18 @@
 <?php
   }
 
+  if(!$err) {
+?>
+  <div><strong>Thank You!</strong></div><br>
+  <div>Welcome to Nerdluv, <?= $name ?></div><br>
+  <div> Now
+    <a href="matches.php">
+			login to see your matches!
+	   </a>
+  </div>
+<?php
+  }
+
 
 ?>
 
