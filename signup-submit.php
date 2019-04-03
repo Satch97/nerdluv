@@ -38,6 +38,27 @@
   }
 
 
+  if (!preg_match("/^[IiEe][NnSs][FfTf][JjPp]$/", $pers)) {
+    $err = TRUE;
+?>
+  <h2>Error, invalid Personality Type Submitted.</h2>
+<?php
+  }
+
+  if (!preg_match("/^[0-2]$/", $os)) {
+    $err = TRUE;
+?>
+  <h2>Error, invalid Personality Type Submitted.</h2>
+<?php
+  }
+
+  if (!preg_match("/^\d{1,2}$/", $min)) {
+    $err = TRUE;
+?>
+  <h2>Error, invalid min field</h2>
+<?php
+  }
+
 
 ?>
 
