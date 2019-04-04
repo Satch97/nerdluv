@@ -1,3 +1,8 @@
+/*
+  File : signup-submit.php
+  Purpose : The page that receives data submitted by
+            signup.php and signs up the new user
+*/
 <?php include("top.html"); ?>
 
 

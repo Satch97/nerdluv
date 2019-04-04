@@ -1,3 +1,9 @@
+/*
+  File : matches.php
+  Purpose : a page with a form for existing users
+						to log in and check their dating matches
+*/
+
 <?php include("top.html"); ?>
 
 <div>
