@@ -19,7 +19,7 @@
 				</li>
 				<li><strong>Gender:</strong><input type="radio" name="gen" value="M" /> Male
 								<input type="radio" name="gen" value="F" checked="checked" /> Female</li>
-				<li><strong>Age:</strong><input type="text" name="age" maxlength="6" /> </li>
+				<li><strong>Age:</strong><input type="text" name="age" maxlength="2" /> </li>
 				<li>
 					<strong>Personality Type:</strong><input type="text" name="perstype" size="6" maxlength="4" />
 					<a href = "http://www.humanmetrics.com/cgi-win/JTypes2.asp">(Don't know your type?)</a>

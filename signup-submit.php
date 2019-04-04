@@ -85,7 +85,7 @@
     try {
       $db = new PDO('mysql:dbname=nerdluv;host=localhost', 'nerd', 'Nerdluv');
       $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
+      $orig_name = $name;
       $name = $db->quote($name);
       $gen = $db->quote($gen);
       $pers = $db->quote($pers);
@@ -104,7 +104,7 @@
 
 ?>
   <div><strong>Thank You!</strong></div><br>
-  <div>Welcome to Nerdluv, <?= $name ?></div><br>
+  <div>Welcome to Nerdluv, <?= $orig_name ?></div><br>
   <div> Now
     <a href="matches.php">
 			login to see your matches!
