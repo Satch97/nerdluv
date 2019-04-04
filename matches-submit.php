@@ -37,7 +37,7 @@
                JOIN useros o ON i.u_id = o.u_id
                JOIN useragerange a ON i.u_id = a.u_id
                WHERE i.name = $name;");
-    if (count($users) < 1) {
+    if ($users->rowCount() == 0) {
 ?>
        <h2>Error, your user information is not found, try signing up</h2>
 <?php
@@ -48,6 +48,7 @@
        $max = $curruser['max'];
        $gen = $curruser['gender'];
        $gen = $db->quote($gen);
+       print_r($currpers);
        $rows = $db->query("SELECT i.name, i.gender, p.u_pers, i.age, oo.os_name, a.min, a.max
                                 FROM userinfo i
                                 JOIN userpersonality p ON i.u_id = p.u_id
