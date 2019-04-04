@@ -57,6 +57,12 @@
                                 AND i.age >= $min
                                 AND i.age <= $max;");
 
+        if($rows->rowCount() == 0) {
+?>
+          <h2>No match is found.</h2>
+<?php
+        }
+
         foreach($rows as $row) {
           $flag = FALSE;
           $currpers = str_split($row["u_pers"]);
