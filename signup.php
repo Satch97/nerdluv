@@ -1,8 +1,10 @@
-/*
-  File : signup.php
-  Purpose : A page with a form that the user
-						can use to sign up for a new account
-*/
+<?php
+	/*
+		  File : signup.php
+		  Purpose : A page with a form that the user
+								can use to sign up for a new account
+	*/
+?>
 
 <?php include("top.html"); ?>
 

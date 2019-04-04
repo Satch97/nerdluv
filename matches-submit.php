@@ -1,8 +1,10 @@
+<?php
 /*
   File : matches-submit.php
   Purpose : Receives data submitted by matches.php
             and show's the user's matches
 */
+?>
 
 <?php include("top.html"); ?>
 
